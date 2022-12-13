@@ -70,6 +70,8 @@
                     <th scope="col">Id</th>
                     <th scope="col">Name</th>
                     <th scope="col">Sex</th>
+                    <th scope="col">Photo</th>
+                    <th scope="col">Best Position</th>
                     <th scope="col" class="text-right"></th>
                 </tr>
             </thead>
@@ -78,6 +80,10 @@
                     <td class="align-middle" data-bind="text:Id"></td>
                     <td class="align-middle" data-bind="text:Name"></td>
                     <td class="align-middle" data-bind="text:Sex"></td>
+                    <td class="align-middle" data-bind="attr:{src: Photo}">
+                        <i class="fa fa-image"></i> <a class="link-dark text-decoration-none" data-bind="attr: { href: Photo }, text : Photo" target="_blank"></a>
+                    </td>
+                    <td class="align-middle" data-bind="text:BestPosition"></td>
                     <td class="text-end">
                         <a class="btn btn-default btn-light btn-xs" data-bind="attr: { href:'./athletesDetails.html?id=' + Id }">
                             <i class="fa fa-eye" title="Selecione para ver detalhes"></i>
