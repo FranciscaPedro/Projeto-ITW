@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>ITW 2022/23 - Olympic Athletes Details</title>
+    <title>ITW 2022/23 - Olympic Games Modalities Details</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
@@ -22,11 +22,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="athletes.html"><i class="fa fa-user-o text-warning"></i> Athletes</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="athletes.html"><i class="fa fa-user-o text-warning"></i> Athletes</a></li>
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="competitions.html"><i class="fa fa-trophy"></i> Competitions</a></li>
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="countries.html"><i class=" fa fa-flag-o text-danger"></i> Countries</a></li>
-                    <li class="nav-item"><a class="nav-link " aria-current="page" href="games.html"><i class="fa fa-map-marker text-success"></i> Games</a></li>
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="modalities.html"><i class="fa fa-soccer-ball-o text-primary"></i> Modalities</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="games.html"><i class="fa fa-map-marker text-success"></i> Games</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="modalities.html"><i class="fa fa-soccer-ball-o text-primary"></i> Modalities</a></li>
                 </ul>
             </div>
         </div>
@@ -38,50 +38,28 @@
         </div>
         <!-- ko if:Name().length > 0 -->
         <div class="row border-bottom mx-0 my-1">
-            <div class="col-2">Athlete Id</div><div class="col-10" data-bind="text: Id"></div>
+            <div class="col-2">Game Id</div><div class="col-10" data-bind="text: Id"></div>
         </div>
         <div class="row border-bottom mx-0  my-1">
             <div class="col-2">Name</div><div class="col-10" data-bind="text: Name"></div>
         </div>
-        <div class="row border-bottom mx-0  my-1">
-            <div class="col-2">Sex</div><div class="col-10" data-bind="text: Sex"></div>
-        </div>
-        <div class="row border-bottom mx-0  my-1">
-            <div class="col-2">Height</div>
-            <div class="col-10" data-bind="text: Height"></div>
-        </div>
-        <div class="row border-bottom mx-0  my-1">
-            <div class="col-2">Weight</div><div class="col-10" data-bind="text: Weight"></div>
-        </div>
-        <div class="row border-bottom mx-0  my-1">
-            <div class="col-2">Born Date</div><div class="col-10" data-bind="text: BornDate"></div>
-        </div>
-        <div class="row border-bottom mx-0  my-1">
-            <div class="col-2">Born Place</div><div class="col-10" data-bind="text: BornPlace"></div>
-        </div>
-        <div class="row border-bottom mx-0  my-1">
-            <div class="col-2">Died Date</div>
-            <div class="col-10" data-bind="text: DiedDate"></div>
-        </div>
-        <div class="row border-bottom mx-0  my-1">
-            <div class="col-2">Died Place</div><div class="col-10" data-bind="text: DiedPlace"></div>
-        </div>
+
         <div class="row border-bottom mx-0  my-1" data-bind="visible: Photo() != '' && Photo() != null">
             <div class="col-2">Photo</div><div class="small col-10">
                 <img class="img-thumbnail" data-bind="attr:{src: Photo}"><br />
                 <i class="fa fa-link"></i> [<a class="link-dark text-decoration-none" data-bind="attr: { href: Photo }, text : Photo" target="_blank"></a>]
             </div>
         </div>
-        <div class="row border-bottom mx-0  my-1" data-bind="visible: OlympediaLink() != '' && OlympediaLink() != null">
-            <div class="col-2">Olympedia</div><div class="small col-10">
-    <!--<img class="img-thumbnail" data-bind="attr:{src: OlympediaLink}"><br />-->
-    <i class="fa fa-link"></i> [<a class="link-dark text-decoration-none" data-bind="attr: { href: OlympediaLink }, text : OlympediaLink" target="_blank"></a>]
-</div>
+        <div class="row border-bottom mx-0  my-1" data-bind="visible: Modalities() != '' && Modalities() != null">
+            <div class="col-2">Modalities</div><div class="small col-10">
+                [<a class="link-dark text-decoration-none" data-bind="attr: { href: Modalities }, text : Modalities" target="_blank"></a>]
+            </div>
         </div>
-            <!-- /ko -->
-            <a href="./athletes.html" class="btn btn-default btn-sm small"><i class="fa fa-list"></i> Back to List</a>
-            <a data-bind="attr: { href:'./athletesFull.html?id=' + Id() }" class="btn btn-default btn-sm small"><i class="fa fa-th"></i> Full Details</a>
-        </div>
+
+        <!-- /ko -->
+        <a href="./modalities.html" class="btn btn-default btn-sm small"><i class="fa fa-list"></i> Back to List</a>
+        <a data-bind="attr: { href:'./modalitiesFull.html?id=' + Id() }" class="btn btn-default btn-sm small"><i class="fa fa-th"></i> Full Details</a>
+    </div>
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -109,6 +87,6 @@
     <script src="../lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../lib/knockout/dist/knockout-latest.min.js"></script>
     <script src="../lib/jquery/dist/jquery.min.js"></script>
-    <script src="athletesDetails.js"></script>
+    <script src="modalitiesDetails.js"></script>
 </body>
 </html>

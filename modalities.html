@@ -69,6 +69,7 @@
                 <tr>
                     <th scope="col">Id</th>
                     <th scope="col">Name</th>
+                    <th scope="col">Photo</th>
                     <th scope="col" class="text-right"></th>
                 </tr>
             </thead>
@@ -76,6 +77,9 @@
                 <tr>
                     <td class="align-middle" data-bind="text:Id"></td>
                     <td class="align-middle" data-bind="text:Name"></td>
+                    <td class="align-middle">
+                        <img class="img-thumbnail" data-bind="attr:{src: Photo}" style="height:100px;" />
+                    </td>
                     <td class="text-end">
                         <a class="btn btn-default btn-light btn-xs" data-bind="attr: { href:'./modalitiesDetails.html?id=' + Id }">
                             <i class="fa fa-eye" title="Selecione para ver detalhes"></i>

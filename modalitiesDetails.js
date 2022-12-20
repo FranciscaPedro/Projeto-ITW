@@ -3,42 +3,28 @@ var vm = function () {
     console.log('ViewModel initiated...');
     //---Variáveis locais
     var self = this;
-    self.baseUri = ko.observable('http://192.168.160.58/Olympics/api/Athletes/');
-    self.displayName = 'Olympic Games Athletes Details';
+    self.baseUri = ko.observable('http://192.168.160.58/Olympics/api/Modalities/');
+    self.displayName = 'Olympic Games edition Details';
     self.error = ko.observable('');
     self.passingMessage = ko.observable('');
     //--- Data Record
     self.Id = ko.observable('');
     self.Name = ko.observable('');
-    self.Sex = ko.observable('');
-    self.Height = ko.observable('');
-    self.Weight = ko.observable('');
-    self.BornDate = ko.observableArray('');
-    self.BornPlace = ko.observable('');
-    self.DiedDate = ko.observable('');
-    self.DiedPlace = ko.observable('');
     self.Photo = ko.observable('');
-    self.OlympediaLink = ko.observable('');
+    self.Modalities = ko.observableArray('');
     self.Url = ko.observable('');
 
     //--- Page Events
     self.activate = function (id) {
-        console.log('CALL: getAthlete...');
+        console.log('CALL: getGame...');
         var composedUri = self.baseUri() + id;
         ajaxHelper(composedUri, 'GET').done(function (data) {
             console.log(data);
             hideLoading();
             self.Id(data.Id);
             self.Name(data.Name);
-            self.Sex(data.Sex);
-            self.Height(data.Height);
-            self.Weight(data.Weight);
-            self.BornDate(data.BornDate);
-            self.BornPlace(data.BornPlace);
-            self.DiedDate(data.DiedDate);
-            self.DiedPlace(data.DiedPlace);
             self.Photo(data.Photo);
-            self.OlympediaLink(data.OlympediaLink);
+            self.Modalities(data.Modalities);
         });
     };
 
