@@ -3,32 +3,44 @@ var vm = function () {
     console.log('ViewModel initiated...');
     //---Variáveis locais
     var self = this;
-    self.baseUri = ko.observable('http://192.168.160.58/Olympics/api/Competitions/');
-    self.displayName = 'Olympic Games Competitions Details';
+    self.baseUri = ko.observable('http://192.168.160.58/Olympics/api/Games/FullDetails?id=');
+    self.displayName = 'Olympic Games edition FullDetails';
     self.error = ko.observable('');
     self.passingMessage = ko.observable('');
     //--- Data Record
     self.Id = ko.observable('');
+    self.CountryName = ko.observable('');
+    self.Logo = ko.observable('');
     self.Name = ko.observable('');
-    self.ModalityId = ko.observableArray('');
-    self.Modality = ko.observable('');
     self.Photo = ko.observable('');
-    self.Participant = ko.observable('');
+    self.Season = ko.observable('');
+    self.Year = ko.observableArray('');
+    self.City = ko.observable('');
+    self.Athletes = ko.observableArray([]);
+    self.Modalities = ko.observableArray([]);
+    self.Competitions = ko.observableArray([]);
+    self.Medals = ko.observableArray([]);
     self.Url = ko.observable('');
 
     //--- Page Events
     self.activate = function (id) {
-        console.log('CALL: getCompetition...');
+        console.log('CALL: getGame...');
         var composedUri = self.baseUri() + id;
         ajaxHelper(composedUri, 'GET').done(function (data) {
             console.log(data);
             hideLoading();
             self.Id(data.Id);
+            self.CountryName(data.CountryName);
+            self.Logo(data.Logo);
             self.Name(data.Name);
-            self.ModalityId(data.ModalityId);
-            self.Modality(data.Modality);
             self.Photo(data.Photo);
-            self.Participant(data.Participant);
+            self.Season(data.Season);
+            self.Year(data.Year);
+            self.City(data.City);
+            self.Athletes(data.Athletes);
+            self.Modalities(data.Modalities);
+            self.Competitions(data.Competitions);
+            self.Medals(data.Medals);
         });
     };
 
@@ -87,6 +99,16 @@ var vm = function () {
     }
     console.log("VM initialized!");
 };
+
+function conv(pos) {
+    if (pos == 1)
+        return "1st - Gold Medal";
+    if (pos == 2)
+        return "2nd - Silver Medal";
+    if (pos == 3)
+        return "3rd - Bronze Medal";
+    return "No Medal";
+}
 
 $(document).ready(function () {
     console.log("document.ready!");

@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>ITW 2022/23 - Olympic Games Athletes Details</title>
+    <title>ITW 2022/23 - Olympic Games edition FullDetails</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
@@ -22,15 +22,15 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="athletes.html"><i class="fa fa-user-o text-warning"></i> Athletes</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="athletes.html"><i class="fa fa-user-o text-warning"></i> Athletes</a></li>
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="competitions.html"><i class="fa fa-trophy"></i> Competitions</a></li>
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="countries.html"><i class=" fa fa-flag-o text-danger"></i> Countries</a></li>
-                    <li class="nav-item"><a class="nav-link " aria-current="page" href="games.html"><i class="fa fa-map-marker text-success"></i> Games</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="games.html"><i class="fa fa-map-marker text-success"></i> Games</a></li>
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="modalities.html"><i class="fa fa-soccer-ball-o text-primary"></i> Modalities</a></li>
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="statistics0.html"><i class="fa fa-bar-chart text-info"></i> Statistics</a></li>
                 </ul>
                 <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item"><a href="favorites.html" class="nav-link "><i class="fa fa-heart-o text-danger"></i> Favorites</a></li>
+                    <li class="nav-item"><a href="favorites.html" class="nav-link"><i class="fa fa-heart-o text-danger"></i> Favorites</a></li>
                 </ul>
             </div>
         </div>
@@ -42,33 +42,29 @@
         </div>
         <!-- ko if:Name().length > 0 -->
         <div class="row border-bottom mx-0 my-1">
-            <div class="col-2">Athlete Id</div><div class="col-10" data-bind="text: Id"></div>
+            <div class="col-2">Game Id</div><div class="col-10" data-bind="text: Id"></div>
         </div>
         <div class="row border-bottom mx-0  my-1">
             <div class="col-2">Name</div><div class="col-10" data-bind="text: Name"></div>
         </div>
         <div class="row border-bottom mx-0  my-1">
-            <div class="col-2">Sex</div><div class="col-10" data-bind="text: Sex"></div>
+            <div class="col-2">Country Name</div><div class="col-10" data-bind="text: CountryName"></div>
         </div>
-        <div class="row border-bottom mx-0  my-1" data-bind="visible: Height() != '' && Height() != null">
-            <div class="col-2">Height</div>
-            <div class="col-10" data-bind="text: Height"></div>
+        <div class="row border-bottom mx-0  my-1">
+            <div class="col-2">City </div><div class="col-10" data-bind="text: City"></div>
         </div>
-        <div class="row border-bottom mx-0  my-1" data-bind="visible: Weight() != '' && Weight() != null">
-            <div class="col-2">Weight</div><div class="col-10" data-bind="text: Weight"></div>
+        <div class="row border-bottom mx-0  my-1">
+            <div class="col-2">Season</div>
+            <div class="col-10" data-bind="text: Season"></div>
         </div>
-        <div class="row border-bottom mx-0  my-1" data-bind="visible: BornDate() != '' && BornDate() != null">
-            <div class="col-2">Born Date</div><div class="col-10" data-bind="text: BornDate"></div>
+        <div class="row border-bottom mx-0  my-1">
+            <div class="col-2">Year</div><div class="col-10" data-bind="text: Year"></div>
         </div>
-        <div class="row border-bottom mx-0  my-1" data-bind="visible: BornPlace() != '' && BornPlace() != null">
-            <div class="col-2">Born Place</div><div class="col-10" data-bind="text: BornPlace"></div>
-        </div>
-        <div class="row border-bottom mx-0  my-1" data-bind="visible: DiedDate() != '' && DiedDate() != null">
-            <div class="col-2">Died Date</div>
-            <div class="col-10" data-bind="text: DiedDate"></div>
-        </div>
-        <div class="row border-bottom mx-0  my-1" data-bind="visible: DiedPlace() != '' && DiedPlace() != null">
-            <div class="col-2">Died Place</div><div class="col-10" data-bind="text: DiedPlace"></div>
+        <div class="row border-bottom mx-0  my-1" data-bind="visible: Logo() != '' && Logo() != null">
+            <div class="col-2">Logo</div><div class="small col-10">
+                <img class="img-thumbnail" data-bind="attr:{src: Logo}"><br />
+                <i class="fa fa-link"></i> <a class="link-dark text-decoration-none" data-bind="attr: { href: Logo }, text: Logo" target="_blank"></a>
+            </div>
         </div>
         <div class="row border-bottom mx-0  my-1" data-bind="visible: Photo() != '' && Photo() != null">
             <div class="col-2">Photo</div><div class="small col-10">
@@ -76,16 +72,70 @@
                 <i class="fa fa-link"></i> <a class="link-dark text-decoration-none" data-bind="attr: { href: Photo }, text : Photo" target="_blank"></a>
             </div>
         </div>
-        <div class="row border-bottom mx-0  my-1" data-bind="visible: OlympediaLink() != '' && OlympediaLink() != null">
-            <div class="col-2">Olympedia</div><div class="small col-10">
-    <!--<img class="img-thumbnail" data-bind="attr:{src: OlympediaLink}"><br />-->
-    <i class="fa fa-link"></i> <a class="link-dark text-decoration-none" data-bind="attr: { href: OlympediaLink }, text : OlympediaLink" target="_blank"></a>
-</div>
-        </div>
-            <!-- /ko -->
-            <a href="./athletes.html" class="btn btn-default btn-sm small"><i class="fa fa-list"></i> Back to List</a>
-            <a data-bind="attr: { href:'./athletesFull.html?id=' + Id() }" class="btn btn-default btn-sm small"><i class="fa fa-th"></i> Full Details</a>
-        </div>
+        <!-- /ko -->
+        <table class="table table-striped table-sm small">
+            <thead class="bg-light text-dark">
+                <tr>
+                    <th scope="col">Competitions</th>
+                    <th scope="col">Modalities</th>
+                    <th scope="col" class="text-right"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="align-middle" data-bind="foreach: Competitions">
+                        <h5 data-bind="text: Name"></h5>
+                    </td>
+                    <td class="align-middle" data-bind="foreach: Competitions">
+                        <h5 data-bind="text: Modality"></h5>
+                    </td>
+                    <td class="text-end">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="table table-striped table-sm small">
+            <thead class="bg-light text-dark">
+                <tr>
+                    <th scope="col">Athletes</th>
+                    <th scope="col">Medals</th>
+                    <th scope="col" class="text-right"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="align-middle" data-bind="foreach: Athletes">
+                        <h5 data-bind="text: Name"></h5>
+                    </td>
+                    <td class="align-middle" data-bind="foreach: Athletes">
+                        <h5 data-bind="text: conv(BestPosition)"></h5>
+                    </td>
+                    <td class="text-end">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-striped table-sm small">
+            <thead class="bg-light text-dark">
+                <tr>
+                    <th scope="col">Medals</th>
+                    <th scope="col" class="text-right"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="align-middle" data-bind="foreach: Medals">
+                        <h5 data-bind="text: Counter"></h5><h5 data-bind="text: MedalName"></h5>
+                    </td>
+                    <td class="text-end">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="./games.html" class="btn btn-default btn-sm small"><i class="fa fa-list"></i> Back to List</a>
+        <a data-bind="attr: { href:'./gameDetails.html?id=' + Id() }" class="btn btn-default btn-sm small"><i class="fa fa-th"></i> Less Details</a>
+    </div>
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -113,6 +163,6 @@
     <script src="../lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../lib/knockout/dist/knockout-latest.min.js"></script>
     <script src="../lib/jquery/dist/jquery.min.js"></script>
-    <script src="athletesDetails.js"></script>
+    <script src="gameFull.js"></script>
 </body>
 </html>

@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>ITW 2022/23 - Olympic Games Competitions List</title>
+    <title>ITW 2022/23 - Olympic Games Competitions Details</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
@@ -27,6 +27,10 @@
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="countries.html"><i class=" fa fa-flag-o text-danger"></i> Countries</a></li>
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="games.html"><i class="fa fa-map-marker text-success"></i> Games</a></li>
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="modalities.html"><i class="fa fa-soccer-ball-o text-primary"></i> Modalities</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="statistics0.html"><i class="fa fa-bar-chart text-info"></i> Statistics</a></li>
+                </ul>
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item"><a href="favorites.html" class="nav-link"><i class="fa fa-heart-o text-danger"></i> Favorites</a></li>
                 </ul>
             </div>
         </div>
@@ -53,22 +57,17 @@
         <div class="row border-bottom mx-0  my-1" data-bind="visible: Photo() != '' && Photo() != null">
             <div class="col-2">Photo</div><div class="small col-10">
                 <img class="img-thumbnail" data-bind="attr:{src: Photo}"><br />
-                <i class="fa fa-link"></i> [<a class="link-dark text-decoration-none" data-bind="attr: { href: Photo }, text : Photo" target="_blank"></a>]
+                <i class="fa fa-link"></i> <a class="link-dark text-decoration-none" data-bind="attr: { href: Photo }, text : Photo" target="_blank"></a>
             </div>
         </div>
-        <!--<div class="row border-bottom mx-0  my-1">
-        <div class="col-2">Participant</div>
-        <div class="col-10" data-bind="text: Participant"></div>
-    </div>
-    <div class="row border-bottom mx-0  my-1" data-bind="visible: Participant() != '' && Participant() != null">
-        <div class="col-2">Participant</div><div class="small col-10">
-            <img class="img-thumbnail" data-bind="attr:{src: Participant}"><br /><i class="fa fa-link"></i><br />
-            [<a class="link-dark text-decoration-none" data-bind="attr: { href: Participant }, text: Participant" target="_blank"></a>]
+        <div class="row border-bottom mx-0  my-1" data-bind="visible: Participant() != '' && Participant() != null">
+            <div class="col-2">Participant</div><div class="small col-10" data-bind="foreach: Participant">
+                <a class="link-dark text-decoration-none img-thumbnail m-1 p-1 d-inline-block small" data-bind="attr: { href:'./gameDetails.html?id=' + Id }, text : Name" target="_blank"></a>
+            </div>
         </div>
-    </div> -->
         <!-- /ko -->
         <a href="./competitions.html" class="btn btn-default btn-sm small"><i class="fa fa-list"></i> Back to List</a>
-        <a data-bind="attr: { href:'./competitionsFull.html?id=' + Id() }" class="btn btn-default btn-sm small"><i class="fa fa-th"></i> Full Details</a>
+        <!--<a data-bind="attr: { href:'./competitionsFull.html?id=' + Id() }" class="btn btn-default btn-sm small"><i class="fa fa-th"></i> Full Details</a>-->
     </div>
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

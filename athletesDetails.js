@@ -3,7 +3,7 @@ var vm = function () {
     console.log('ViewModel initiated...');
     //---Variáveis locais
     var self = this;
-    self.baseUri = ko.observable('http://192.168.160.58/Olympics/api/Athletes/');
+    self.baseUri = ko.observable('http://192.168.160.58/Olympics/api/Athletes/FullDetails?id=');
     self.displayName = 'Olympic Games Athletes Details';
     self.error = ko.observable('');
     self.passingMessage = ko.observable('');
@@ -13,7 +13,7 @@ var vm = function () {
     self.Sex = ko.observable('');
     self.Height = ko.observable('');
     self.Weight = ko.observable('');
-    self.BornDate = ko.observableArray('');
+    self.BornDate = ko.observable('');
     self.BornPlace = ko.observable('');
     self.DiedDate = ko.observable('');
     self.DiedPlace = ko.observable('');

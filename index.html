@@ -12,13 +12,50 @@
     <link href="../lib/font-awesome/dist/css/font-awesome.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="myCSS.css" />
     <style>
-        .carousel { width: 100%; margin: 0 auto; }
-        .carousel-item { z-index: -100; height: 800px; background-position: center center; background-repeat: no-repeat; background-size: cover; }
-            .carousel-item:nth-child(1) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/bc/Beijing_China_Beijing-National-Stadium-02.jpg'); }
-            .carousel-item:nth-child(2) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/1b/Richmond_Olympic_Oval_front_view.jpg'); }
-            .carousel-item:nth-child(3) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/34/Rio2016_julho_VilaAtletas_Barra_002_2659_-c-2016_GabrielHeusi_HeusiAction.jpg'); }
-            .carousel-item:nth-child(4) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/9d/New_national_stadium_tokyo_1.jpg'); }
+        .carousel {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .carousel-item {
+            z-index: -100;
+            height: 800px;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+            .carousel-item:nth-child(1) {
+                background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/bc/Beijing_China_Beijing-National-Stadium-02.jpg');
+            }
+
+            .carousel-item:nth-child(2) {
+                background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/1b/Richmond_Olympic_Oval_front_view.jpg');
+            }
+
+            .carousel-item:nth-child(3) {
+                background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/34/Rio2016_julho_VilaAtletas_Barra_002_2659_-c-2016_GabrielHeusi_HeusiAction.jpg');
+            }
+
+            .carousel-item:nth-child(4) {
+                background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/9d/New_national_stadium_tokyo_1.jpg');
+            }
     </style>
+    <style>
+        p {
+            text-align: justify;
+        }
+        h3 {
+            margin-top: 50px;
+        }
+        img.displayed {
+            display: block;
+            margin-left:auto;
+            margin-right:auto;
+        }
+
+    </style>
+
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -34,6 +71,10 @@
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="countries.html"><i class=" fa fa-flag-o text-danger"></i> Countries</a></li>
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="games.html"><i class="fa fa-map-marker text-success"></i> Games</a></li>
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="modalities.html"><i class="fa fa-soccer-ball-o text-primary"></i> Modalities</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="statistics0.html"><i class="fa fa-bar-chart text-info"></i> Statistics</a></li>
+                </ul>
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item"><a href="favorites.html" class="nav-link"><i class="fa fa-heart-o text-danger"></i> Favorites</a></li>
                 </ul>
             </div>
         </div>
@@ -81,11 +122,50 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
+    <!--História-->
+    <div class="container-md">
+        <h1 class="text-info">Curiosidades sobre os Jogos Olímpicos</h1>
+        <h3 class="text-warning">1 - O que são os Jogos Olímpicos?</h3>
+        <p>
+            As Olimpíadas são o maior evento desportivo do mundo, onde atletas de 238 países participam em disputas de diferentes modalidades.
+            Elas acontecem de quatro em quatro anos e são divididas entre Jogos Olímpicos de Verão e Jogos Olímpicos de Inverno (que ocorrem com dois anos de diferença entre si).
+            Há ainda os Jogos Paralímpicos, também separados entre de verão e de inverno, destinados a atletas com deficiências.
+        </p>
+        <img class="displayed" src="https://s2.glbimg.com/LLVkonKkj1nI3-aO1ZliN30kBv4=/1200x/smart/filters:cover():strip_icc()/s.glbimg.com/es/ge/f/original/2019/04/13/1555150028098.jpg" height="200px" />
+        <h3>2 - Qual o objetivo dos Jogos Olímpicos?</h3>
+        <p>
+            Os Jogos Olímpicos foram criados com o objetivo de utilizar o desporto como instrumento para a promoção da paz, da união e do respeito.
+            Entre os principais intuitos está a contribuição para um mundo melhor e a garantia de que a prática do desporto é um direito de todos os seres humanos.
+        </p>
+        <h3 class="text-danger">3 - Onde surgiram os Jogos Olímpicos?</h3>
+        <p>
+            Os primeiros Jogos Olímpicos da Antiguidade aconteceram em Olímpia, na Grécia, no ano de 776 a.C. Na época, o evento tinha o objetivo  de prestar culto aos deuses do Olimpo por meio da valorização das aptidões de cada atleta. Tal era a importância da competição que os helenos obedeciam ao armistício sagrado: no período olímpico, eles abandonavam as suas disputas, para se dedicarem às atividades pacíficas.
+            Durante as Olimpíadas, os cidadãos competiam entre si para ver quem melhor demonstrava o seu respeito às divindades. E, como a vitória olímpica consagrava o atleta e representava glória para o seu local de origem, as cidades-estado buscavam incentivar a prática desportiva instituindo leis e regulamentos.
+        </p>
+        <p>
+            Até 728 a.C., um tipo de corrida chamado “stadión” (equivalente às atuais provas de atletismo de 200 metros) era a única competição realizada. Ao longo do tempo, o evento, que inicialmente durava apenas um dia, passou a durar cinco dias graças às novas modalidades agregadas. Em 394 d.C., os Jogos Olímpicos foram banidos pelo imperador romano Teodósio, que se converteu ao cristianismo e proibiu a realização de festas pagãs.
+        </p>
+        <h3 style="color: green">4 - Quem fundou os Jogos Olímpicos da Era Moderna?</h3>
+        <p> O título de fundador dos Jogos Olímpicos Modernos é atribuído ao francês Pierre de Coubertin, que era um apaixonado por desporto e considerava-o um elemento central para a educação. Conhecido como Barão de Coubertin, ele era secretário geral da União das Sociedades Desportivas e Atléticas Francesa (USFSA) e tinha o objetivo de fazer com que o desporto unisse a juventude do mundo e atuasse como um agente de paz.</p>
+        <p> Inspirado pelo legado histórico da Grécia e por escavações arqueológicas que aconteceram em Olímpia entre 1875 e 1881, Coubertin fundou o Comité Olímpico Internacional (COI) em 23 de junho de 1894, com um plano de desenvolvimento que culminou na realização dos primeiros Jogos Olímpicos da Era Moderna.</p>
+        <img class="displayed" src="data:image/jpeg;base64,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" height="200px" />
+
+        <h3 class="text-primary">5 - Quais são os símbolos olímpicos?</h3>
+        <p>Um dos mais famosos símbolos das Olimpíadas são os aros olímpicos, concebidos por Pierre de Coubertin em 1914. Representando a união dos cinco continentes, eles aparecem interligados sobre um fundo branco na bandeira olímpica. As cores azul, amarelo, preto, verde e vermelho foram escolhidas por serem comuns às bandeiras dos países membros do Comité Olímpico Internacional. Além de serem a principal representação gráfica da competição, os aros olímpicos são a marca do COI.</p>
+        <img class="displayed" src="https://1.bp.blogspot.com/-L2b8QCfDenU/YH3shv-4RTI/AAAAAAAAW3A/6e7SMUPfvNA55Dq6omJCL2KMyXQJyfq3wCLcBGAsYHQ/s1600/Aros%2BOlimpicos%2B%25281%2529.jpg" height="200px" />
+        <p>
+            Outro ícone dos Jogos Olímpicos é a Tocha Olímpica, que sai da Grécia e é transportada por atletas e outros cidadãos até o local da cerimónia de abertura. A chama da tocha anuncia a celebração das Olimpíadas, representa a paz e a amizade, sendo utilizada para acender a Pira Olímpica (que só se apaga no final da cerimónia de encerramento). A primeira edição que contou com este ritual foi a de 1936, em Berlim, na Alemanha. Em cada Olimpíada, a Tocha Olímpica ganha novos desenhos e diferentes formas, uma vez que o seu design fica a cargo do país-sede.
+        </p>
+        <img class="displayed" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR78eIlMmDWNDbb8q0P_6HUyvEJAZtWqpqsIw&usqp=CAU" height="200px" />
+        <p>
+            Também bastante conhecidas pelo público, as mascotes oficiais são consideradas símbolos olímpicos. A ideia foi inaugurada nos Jogos Olímpicos de Munique, em 1972, na Rússia, com o cão Waldi, da raça Dachshund. De lá para cá, as mascotes tornaram-se símbolos de alegria e de amizade, para além de representarem elementos característicos do país ou da cidade-sede.
+        </p>
+        <img class="displayed" src="data:image/png;base64,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" height="200px" />
+    </div>
     <!-- End of Working Area -->
     <nav class="navbar navbar-light bg-light fixed-bottom">
         <div class="container small">
             <div class="navbar-text">&copy;  Introdução as Tecnologias Web - 2022/23</div>
-            <div class="navbar-text">Made with <i class="fa fa-heart-o text-danger"></i> for U by <a href="mailto:jsp@ua.pt" class="text-decoration-none text-muted">jsp@ua.pt</a>.</div>
             <div class="navbar-nav">
                 <div class="nav-item text-end"><a href="https://www.ua.pt" class="nav-link">Universidade de Aveiro</a></div>
             </div>
